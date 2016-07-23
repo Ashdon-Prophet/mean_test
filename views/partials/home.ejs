@@ -1,0 +1,12 @@
+<table class="table table-striped" style="minwidth=80%">
+    <tr>
+        <th>Questions</th>
+        <th>Answers</th>
+        <th>Action</th>
+    </tr>
+    <tr ng-repeat="question in questions">
+        <td>{{question.title}}</td>
+        <td>{{question.ansCount}}</td>
+        <td><a href="#/questions/{{$index}}">Answers</a></td>
+    </tr>
+</table>

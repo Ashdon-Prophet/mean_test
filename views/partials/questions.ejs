@@ -1,0 +1,17 @@
+<div class="page-header">
+    <h3>{{question.title}}</h3>
+</div>
+<div ng-repeat="answer in question.answers | orderBy:'-upvotes'">
+    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(answer)"></span>
+    {{answer.upvotes}} - by {{answer.author}}
+    <span style="font-size:20px; margin-left:10px;">
+        {{answer.body}}
+    </span>
+</div>
+<form ng-submit="addAnswer()" style="margin-top:30px;">
+    <h3>Add a new answer</h3>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Answer" ng-model="body"></input>
+    </div>
+    <button type="submit" class="btn btn-primary">Question</button>
+</form>
